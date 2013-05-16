@@ -1,5 +1,5 @@
 {
-    "name": "gabriel403/g403-session-db",
+    "name": "gabriel403/g403-temp-role-provider",
     "description": "Extension to ZF2 to allow sessions to be stored in the database.",
     "type": "library",
     "keywords": [
