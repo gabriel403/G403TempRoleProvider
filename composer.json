@@ -1,12 +1,14 @@
 {
     "name": "gabriel403/g403-temp-role-provider",
-    "description": "Extension to ZF2 to allow sessions to be stored in the database.",
+    "description": "Extension to ZF2 to enable temporary roles on a user.",
     "type": "library",
     "keywords": [
         "zf2",
-        "sessions"
+        "sessions",
+        "auth",
+        "roles"
     ],
-    "homepage": "https://github.com/gabriel403/G403SessionDb",
+    "homepage": "https://github.com/gabriel403/G403TempRoleProvider",
     "authors": [
         {
             "name": "Gabriel Baker",
