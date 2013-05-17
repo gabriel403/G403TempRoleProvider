@@ -31,7 +31,7 @@ class Temp implements ProviderInterface
             $session->offsetSet('roles', []);
         }
         $roles   = $session->offsetGet('roles');
-        if ( !in_array($role, $roles) )
+        if ( false === array_search($role, $roles) )
         {
             $roles[] = $role;
             $session->offsetSet('roles', $roles);
@@ -54,12 +54,12 @@ class Temp implements ProviderInterface
             return $this;
         }
         $roles   = $session->offsetGet('roles');
-        if ( !in_array($role, $roles) )
+        if ( false === array_search($role, $roles) )
         {
             return $this;
         }
 
-        unset($roles[$role]);
+        unset($roles[array_search($role, $roles)]);
         $session->offsetSet('roles', $roles);
 
         return $this;
