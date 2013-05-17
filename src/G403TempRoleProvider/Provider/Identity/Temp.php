@@ -53,7 +53,7 @@ class Temp implements ProviderInterface
         {
             return $this;
         }
-        $roles   = $session->offsetGet('roles')
+        $roles   = $session->offsetGet('roles');
         if ( !in_array($role, $roles) )
         {
             return $this;
@@ -79,7 +79,7 @@ class Temp implements ProviderInterface
 
     public function getIdentityRoles()
     {
-        $roles = $this->getMainProvider()->getIdentityRoles();
+        $roles  = $this->getMainProvider()->getIdentityRoles();
         $nroles = [];
 
         $session = $this->getContainer();
