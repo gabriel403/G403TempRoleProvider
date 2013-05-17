@@ -20,12 +20,17 @@ class Module implements AutoloaderProviderInterface
         return [
             'factories' => [
                 'G403TempIdentityProvider' => function ($sm) {
-                    $tip                  = new Provider\Identity\Temp;
-                    $config               = $sm->get('Config');
-                    $mainIdentityProviderC= $config['G403TempRoleProvider']['MainIdentityProvider'];
-                    $mainIdentityProvider = $sm->get($mainIdentityProviderC);
+                    $tip                   = new Provider\Identity\Temp;
+                    $config                = $sm->get('Config');
+                    $mainIdentityProviderC = $config['G403TempRoleProvider']['MainIdentityProvider'];
+                    $mainIdentityProvider  = $sm->get($mainIdentityProviderC);
                     $tip->setMainProvider($mainIdentityProvider);
                     return $tip;
+                },
+                'G403TempIdentityService' => function ($sm) {
+                    $tempIdService = new Service\Temp;
+                    $tempIdService->setTempRoleProvider($sm->get('G403TempIdentityProvider'));
+                    return $tempIdService;
                 }
             ]
         ];
