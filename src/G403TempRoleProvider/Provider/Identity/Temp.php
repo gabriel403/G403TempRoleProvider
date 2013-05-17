@@ -30,7 +30,7 @@ class Temp implements ProviderInterface
         {
             $session->offsetSet('roles', []);
         }
-        $roles   = $session->offsetGet('roles')
+        $roles   = $session->offsetGet('roles');
         if ( !in_array($role, $roles) )
         {
             $roles[] = $role;
